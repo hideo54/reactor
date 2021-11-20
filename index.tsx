@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import styled from 'styled-components';
-import { StyledIcon } from '@styled-icons/styled-icon';
+import type { StyledIcon } from '@styled-icons/styled-icon';
 
 const A = styled.a<{
     color?: string;
