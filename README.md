@@ -5,8 +5,16 @@
 
 hideo54 がよく使う React component だよ
 
+## IconSpan
+
+アイコンつきテキスト。[styled-icons](https://github.com/styled-icons/styled-icons) と一緒に使う。
+
 ## IconLink
 
-アイコンつきリンク。[styled-icons](https://github.com/styled-icons/styled-icons) と一緒に使う。
+アイコンつきリンク。[styled-icons](https://github.com/styled-icons/styled-icons) と一緒に使う。IconSpan を anchor で wrap したもの。
 
 Next.js で使う時は `<Link href='...' passHref></Link>` を忘れずに。
+
+## Ideas List
+
+* Segmented Control 欲しい
