@@ -1,35 +1,17 @@
-import React, { ReactNode } from 'react';
-import styled from 'styled-components';
+import React, { ComponentProps } from 'react';
 import type { StyledIcon } from '@styled-icons/styled-icon';
 
-const A = styled.a<{
-    color?: string;
-    fontSize?: string;
-}>`
-    ${props => props.color ? `
-        color: ${props.color};
-    ` : ''}
-    ${props => props.fontSize ? `
-        font-size: ${props.fontSize};
-    ` : ''}
-`;
-
-export const IconLink = ({
-    LeftIcon,
-    RightIcon,
-    href,
-    color,
-    fontSize,
-    alt,
-    children,
-}: {
+export const IconSpan: React.FC<{
     LeftIcon?: StyledIcon;
     RightIcon?: StyledIcon;
-    href?: string;
     color?: string;
     fontSize?: string;
-    alt?: string;
-    children?: ReactNode;
+}> = ({
+    LeftIcon,
+    RightIcon,
+    color,
+    fontSize,
+    children,
 }) => {
     const contents = <>
         {LeftIcon &&
@@ -42,14 +24,7 @@ export const IconLink = ({
                 }}
             />
         }
-        {children &&
-            <span style={{
-                color,
-                lineHeight: '1.5em',
-            }}>
-                {children}
-            </span>
-        }
+        {children}
         {RightIcon &&
             <RightIcon
                 size='1.2em'
@@ -62,17 +37,35 @@ export const IconLink = ({
         }
     </>;
     return (
-        <A
-            href={href}
-            aria-label={alt}
+        <span
             color={color}
-            fontSize={fontSize}
-            {...!href?.startsWith('/') && {
+            style={{
+                fontSize,
+            }}
+        >
+            {contents}
+        </span>
+    );
+};
+
+export const IconLink: React.FC<ComponentProps<typeof IconSpan> & {
+    href?: string;
+}> = props => {
+    return (
+        <a
+            href={props.href}
+            style={{
+                color: props.color,
+                fontSize: props.fontSize,
+            }}
+            {...!props.href?.startsWith('/') && {
                 target: '_blank',
                 rel: 'noreferrer noopener',
             }}
         >
-            {contents}
-        </A>
+            <IconSpan {...props}>
+                {props.children}
+            </IconSpan>
+        </a>
     );
 };
