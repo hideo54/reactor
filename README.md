@@ -15,6 +15,12 @@ hideo54 がよく使う React component だよ
 
 Next.js で使う時は `<Link href='...' passHref></Link>` を忘れずに。
 
+## Colorful Slider
+
+標準では色を変えることができない `input[type="range"]` の色を変えます。React 用 (value をあてる必要がある)。
+
+`backgroundColor` の標準値は `lightgray`.
+
 ## Ideas List
 
 * Segmented Control 欲しい
