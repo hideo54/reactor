@@ -7,11 +7,13 @@ export const IconSpan: React.FC<{
     RightIcon?: StyledIcon;
     color?: string;
     fontSize?: string;
+    margin?: string;
 }> = ({
     LeftIcon,
     RightIcon,
     color,
     fontSize,
+    margin,
     children,
 }) => {
     const contents = <>
@@ -42,6 +44,7 @@ export const IconSpan: React.FC<{
             color={color}
             style={{
                 fontSize,
+                margin,
             }}
         >
             {contents}
@@ -58,6 +61,7 @@ export const IconLink: React.FC<ComponentProps<typeof IconSpan> & {
             style={{
                 color: props.color,
                 fontSize: props.fontSize,
+                margin: props.margin,
             }}
             {...!props.href?.startsWith('/') && {
                 target: '_blank',
