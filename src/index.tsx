@@ -1,4 +1,5 @@
 import React, { ComponentProps } from 'react';
+import Link from 'next/link';
 import styled from 'styled-components';
 import type { StyledIcon } from '@styled-icons/styled-icon';
 
@@ -52,28 +53,36 @@ export const IconSpan: React.FC<{
     );
 };
 
-export const IconLink: React.FC<ComponentProps<typeof IconSpan> & {
+export const IconAnchor: React.FC<ComponentProps<typeof IconSpan> & {
     href?: string;
-}> = props => {
-    return (
-        <a
-            href={props.href}
-            style={{
-                color: props.color,
-                fontSize: props.fontSize,
-                margin: props.margin,
-            }}
-            {...!props.href?.startsWith('/') && {
-                target: '_blank',
-                rel: 'noreferrer noopener',
-            }}
-        >
-            <IconSpan {...props}>
-                {props.children}
-            </IconSpan>
-        </a>
-    );
-};
+}> = props => (
+    <a
+        href={props.href}
+        style={{
+            color: props.color,
+            fontSize: props.fontSize,
+            margin: props.margin,
+        }}
+        {...!props.href?.startsWith('/') && {
+            target: '_blank',
+            rel: 'noreferrer noopener',
+        }}
+    >
+        <IconSpan {...props}>
+            {props.children}
+        </IconSpan>
+    </a>
+);
+
+type RequiredBy<T, K extends keyof T> = Omit<T, K> & Required<Pick<T, K>>;
+
+export const IconNextLink: React.FC<
+    RequiredBy<ComponentProps<typeof IconAnchor>, 'href'>
+> = props => (
+    <Link href={props.href} passHref>
+        <IconAnchor {...props} />
+    </Link>
+);
 
 export const ColorfulSlider = styled.input.attrs({
     type: 'range',
