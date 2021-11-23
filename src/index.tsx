@@ -42,8 +42,8 @@ export const IconSpan: React.FC<{
     </>;
     return (
         <span
-            color={color}
             style={{
+                color,
                 fontSize,
                 margin,
             }}
