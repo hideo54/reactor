@@ -89,12 +89,30 @@ export const IconNextLink: React.FC<
     );
 };
 
+const describeBackgroundGradient = (props: {
+    color: string;
+    backgroundColor?: string;
+    value: number;
+    min: number;
+    max: number;
+}) => {
+    const valuePercent = 100 * (props.value - props.min) / (props.max - props.min);
+    const gradientElements = [
+        'to right',
+        `${props.color} ${valuePercent}%`,
+        `${props.backgroundColor || 'lightgray'} 0% 100%`,
+    ];
+    return `linear-gradient(${gradientElements.join(', ')})`;
+};
+
 export const ColorfulSlider = styled.input.attrs({
     type: 'range',
 })<{
     color: string;
     backgroundColor?: string;
     value: number;
+    min: number;
+    max: number;
 }>`
     width: 100%;
     margin-top: 24px;
@@ -124,7 +142,7 @@ export const ColorfulSlider = styled.input.attrs({
         width: 100%;
         height: 8px;
         border-radius: 4px;
-        background: ${props => `linear-gradient(to right, ${props.color} ${props.value * 50}%, lightgray ${props.value}% 100%)`};
+        background: ${describeBackgroundGradient};
     }
     &::-webkit-slider-thumb {
         -webkit-appearance: none;
