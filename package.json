@@ -1,6 +1,6 @@
 {
   "name": "@hideo54/reactor",
-  "version": "1.4.4",
+  "version": "1.4.5",
   "description": "Popular React components in hideo54's works.",
   "main": "dist/index.js",
   "scripts": {
