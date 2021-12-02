@@ -7,7 +7,7 @@
     "build": "tsc",
     "lint": "eslint src/",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "npm run build"
+    "prepare": "rm -R dist && npm run build"
   },
   "types": "dist/index.d.ts",
   "repository": {
