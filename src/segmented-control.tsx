@@ -48,7 +48,7 @@ export const SegmentedControl: React.VFC<{
     return (
         <div>
             {props.options.map(option => (
-                <span key={option.id}>
+                <React.Fragment key={option.id}>
                     <RadioInput
                         type='radio'
                         name={props.id}
@@ -66,7 +66,7 @@ export const SegmentedControl: React.VFC<{
                     >
                         {option.name}
                     </RadioLabel>
-                </span>
+                </React.Fragment>
             ))}
         </div>
     );
