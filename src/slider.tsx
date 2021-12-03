@@ -26,7 +26,6 @@ export const ColorfulSlider = styled.input.attrs({
     max: number;
 }>`
     width: 100%;
-    margin-top: 24px;
     outline: none;
     -webkit-appearance: none;
     background-color: transparent;
