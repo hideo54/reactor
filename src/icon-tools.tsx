@@ -52,12 +52,14 @@ export const IconSpan: React.FC<{
     );
 };
 
-export const IconAnchor: React.FC<
-    ComponentProps<typeof IconSpan> & {
+// eslint-disable-next-line react/display-name
+export const IconAnchor = React.forwardRef((
+    props: ComponentProps<typeof IconSpan> & {
         href?: string;
-    }
-> = props => (
+    },
+    ref: React.Ref<HTMLAnchorElement>) => (
     <a
+        ref={ref}
         href={props.href}
         style={{
             color: props.color,
@@ -73,7 +75,7 @@ export const IconAnchor: React.FC<
             {props.children}
         </IconSpan>
     </a>
-);
+));
 
 export const IconNextLink: React.FC<
     Omit<ComponentProps<typeof IconAnchor>, 'href'> & {
