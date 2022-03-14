@@ -6,12 +6,14 @@ export const IconSpan: React.FC<{
     LeftIcon?: StyledIcon;
     RightIcon?: StyledIcon;
     color?: string;
+    size?: string;
     fontSize?: string;
     margin?: string;
 }> = ({
     LeftIcon,
     RightIcon,
     color,
+    size,
     fontSize,
     margin,
     children,
@@ -19,7 +21,7 @@ export const IconSpan: React.FC<{
     const contents = <>
         {LeftIcon &&
             <LeftIcon
-                size='1.2em'
+                size={size || '1.2em'}
                 style={{
                     color,
                     verticalAlign: 'text-bottom',
@@ -30,7 +32,7 @@ export const IconSpan: React.FC<{
         {children}
         {RightIcon &&
             <RightIcon
-                size='1.2em'
+                size={size || '1.2em'}
                 style={{
                     color,
                     verticalAlign: 'text-bottom',
