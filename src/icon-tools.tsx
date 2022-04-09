@@ -1,4 +1,4 @@
-import React, { ComponentProps } from 'react';
+import React, { ComponentProps, ReactNode } from 'react';
 import Link, { LinkProps } from 'next/link';
 import type { StyledIcon } from '@styled-icons/styled-icon';
 
@@ -9,6 +9,7 @@ export const IconSpan: React.FC<{
     size?: string;
     fontSize?: string;
     margin?: string;
+    children?: ReactNode;
 }> = ({
     LeftIcon,
     RightIcon,
