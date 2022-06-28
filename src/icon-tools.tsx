@@ -1,5 +1,5 @@
-import React, { ComponentProps, ReactNode } from 'react';
-import Link, { LinkProps } from 'next/link';
+import React, { type ComponentProps, type ReactNode } from 'react';
+import Link, { type LinkProps } from 'next/link';
 import type { StyledIcon } from '@styled-icons/styled-icon';
 
 export const IconSpan: React.FC<{
