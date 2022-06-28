@@ -10,6 +10,7 @@ export const IconSpan: React.FC<{
     fontSize?: string;
     margin?: string;
     children?: ReactNode;
+    onClick?: () => void;
 }> = ({
     LeftIcon,
     RightIcon,
@@ -18,6 +19,7 @@ export const IconSpan: React.FC<{
     fontSize,
     margin,
     children,
+    onClick,
 }) => {
     const contents = <>
         {LeftIcon &&
@@ -49,6 +51,7 @@ export const IconSpan: React.FC<{
                 fontSize,
                 margin,
             }}
+            onClick={onClick}
         >
             {contents}
         </span>
