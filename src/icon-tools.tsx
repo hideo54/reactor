@@ -9,6 +9,7 @@ export const IconSpan: React.FC<{
     size?: string;
     fontSize?: string;
     margin?: string;
+    verticalAlign?: string;
     children?: ReactNode;
     onClick?: MouseEventHandler<HTMLAnchorElement>;
 }> = ({
@@ -18,6 +19,7 @@ export const IconSpan: React.FC<{
     size,
     fontSize,
     margin,
+    verticalAlign = 'text-bottom',
     children,
     onClick,
 }) => {
@@ -27,7 +29,7 @@ export const IconSpan: React.FC<{
                 size={size || '1.2em'}
                 style={{
                     color,
-                    verticalAlign: 'text-bottom',
+                    verticalAlign: verticalAlign,
                     marginRight: '0.1em',
                 }}
             />
@@ -38,7 +40,7 @@ export const IconSpan: React.FC<{
                 size={size || '1.2em'}
                 style={{
                     color,
-                    verticalAlign: 'text-bottom',
+                    verticalAlign: verticalAlign,
                     marginLeft: '0.1em',
                 }}
             />
