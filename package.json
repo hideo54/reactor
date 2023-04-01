@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/hideo54/reactor#readme",
   "devDependencies": {
-    "@hideo54/eslint-config": "^1.0.12",
+    "@hideo54/eslint-config": "^1.1.0",
     "@styled-icons/ionicons-solid": "^10.46.0",
     "@styled-icons/styled-icon": "^10.6.3",
     "@types/node": "^18.0.0",
