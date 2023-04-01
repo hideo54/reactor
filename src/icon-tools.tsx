@@ -87,7 +87,7 @@ export const IconNextLink: React.FC<
     }
 > = props => {
     return (
-        <Link href={props.href} passHref>
+        <Link href={props.href} legacyBehavior passHref>
             <a style={{
                 color: props.color,
                 fontSize: props.fontSize,
