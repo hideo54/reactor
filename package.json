@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc",
     "lint": "eslint src/",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "next build",
     "prepare": "rm -f -R dist && npm run build"
   },
   "types": "dist/index.d.ts",
@@ -22,6 +22,7 @@
   "homepage": "https://github.com/hideo54/reactor#readme",
   "devDependencies": {
     "@hideo54/eslint-config": "^1.0.12",
+    "@styled-icons/ionicons-solid": "^10.46.0",
     "@styled-icons/styled-icon": "^10.6.3",
     "@types/node": "^18.0.0",
     "@types/react": "^18.0.0",
