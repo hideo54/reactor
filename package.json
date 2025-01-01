@@ -25,15 +25,15 @@
     "@styled-icons/ionicons-solid": "^10.46.0",
     "@styled-icons/styled-icon": "^10.6.3",
     "@types/node": "^22.0.2",
-    "@types/react": "^18.0.0",
+    "@types/react": "^19.0.2",
     "@types/react-dom": "^18.0.0",
     "@types/styled-components": "^5.1.15",
     "typescript": "^5.0.4"
   },
   "dependencies": {
     "next": "^15.1.1",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "styled-components": "^6.1.11"
   }
 }
